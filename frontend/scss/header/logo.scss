@@ -1,0 +1,52 @@
+@import '../variables.scss';
+
+.logo__wrapper {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    >.logo {
+        position: relative;
+        // opacity: 0.5;
+        color: $celadon-blue;
+        text-shadow: 0px 1px 1px hsla(240, 63%, 28%, 0.3);
+        text-transform: uppercase;
+        font-family: 'Coiny', sans-serif !important;
+        font-size: 1.9rem;
+        // font-weight: bold;
+
+        // background-color: #f3ec78;
+        background-image: linear-gradient(45deg, $jungle-green, $queen-blue, $orange-red);
+        background-size: 100%;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        // font-style: italic;
+
+        // &::after {
+        //     content: "paczaj";
+        //     position: absolute;
+        //     inset: 0;
+        //     color: black;
+        //     text-shadow: 1px 1px 2px hsla(0, 0%, 26%, 0.5);
+        // }
+    }
+
+
+
+    .logo_domain {
+        // background: -webkit-linear-gradient($primary, $secondary);
+        // -webkit-background-clip: text;
+        // -webkit-text-fill-color: transparent;
+        // filter: blur(1px);
+        text-shadow: 1px 1px 0px hsl(0, 2%, 12%);
+        color: $red-salsa;
+        // font-style: italic;
+        // text-decoration: underline $secondary;
+        font-size: 1.4rem;
+        opacity: 0.5;
+    }
+}

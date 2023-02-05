@@ -1,0 +1,13 @@
+@import '../variables.scss';
+
+
+hr {
+    margin: 0;
+}
+
+.carticle-category__divider {
+    border: 1px dashed lighten($header-bkg-color, 15%);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.493);
+    margin-bottom: 20px;
+    ;
+}

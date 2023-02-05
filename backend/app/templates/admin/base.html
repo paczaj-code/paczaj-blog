@@ -1,0 +1,80 @@
+{% extends "admin/base.html" %}
+
+{% block extrahead %}
+
+{{ block.super }}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/codemirror.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+
+{% comment %} <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer" /> {% endcomment %}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/codemirror.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/theme/dracula.min.css" 
+integrity="sha512-gFMl3u9d0xt3WR8ZeW05MWm3yZ+ZfgsBVXLSOiFz2xeVrZ8Neg0+V1kkRIo9LikyA/T9HuS91kDfc2XWse0K0A==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.0/mode/javascript/javascript.min.js"
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/addon/edit/closetag.min.js" integrity="sha512-XYx5xhl4B5vKNlaRBWh/nlti0+IPM6eT+dSFc3/oc4rERn2DpwbS3q4OblprqqBLXyRSVePKmf+8mHkDLtGZpg==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/htmlmixed/htmlmixed.min.js" integrity="sha512-HN6cn6mIWeFJFwRN9yetDAMSh+AK9myHF1X9GlSlKmThaat65342Yw8wL7ITuaJnPioG0SYG09gy0qd5+s777w==" 
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.6/mode/xml/xml.min.js" integrity="sha512-LarNmzVokUmcA7aUDtqZ6oTS+YXmUKzpGdm8DxC46A6AHu+PQiYCUlwEGWidjVYMo/QXZMFMIadZtrkfApYp/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+    {% comment %} window.addEventListener('load', (event) => {
+        const target = document.getElementById("id_content");
+        target.value = JSON.stringify(JSON.parse(target.value), null, '  ');
+        const config = {
+            mode: 'javascript',
+            theme: 'oceanic-next',
+            lineNumbers: true,
+            lineWrapping: true
+        }
+
+        const jsonCodeMirror = CodeMirror.fromTextArea(target, config);
+        jsonCodeMirror.setSize("100%", 600);
+    }); {% endcomment %}
+
+    window.onload=function(){/*from   w w  w .j  a v  a2s  .  c  o  m*/
+
+ var textareas = document.querySelectorAll(".vLargeTextField");
+
+for (var i = 0; i < textareas.length; i++) {
+    CodeMirror.fromTextArea(textareas[i], {
+        lineWrapping: true,
+        mode: "htmlmixed",
+        theme: "dracula",
+        lineNumbers: true,
+        autoCloseTags: true,
+        autoCloseBrackets: true,
+     });
+}
+    }
+    {% comment %} (function(){
+    var $ = django.jQuery;
+    $(document).ready(function(){
+        $('textarea.vLargeTextField').each(function(idx, el){
+            CodeMirror.fromTextArea(el, {
+                lineNumbers: true,
+                mode: 'htmlmixed'
+            });
+        });
+    });
+}); {% endcomment %}
+</script>
+
+<style>
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
+}
+</style>
+{% endblock %}

@@ -1,0 +1,307 @@
+@import '../variables';
+// $some: hsla(251, 85%, 8%, 0.768);
+
+
+
+[class^='menu__link'] {
+    font-size: 1.1rem;
+    color: $basic-font-color;
+    position: relative;
+    font-family: 'Ubuntu Condense', sans-serif;
+}
+
+.submenu__wrapper {
+    display: none;
+}
+
+.mobile-menu__header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    border-bottom: dashed rgba($primary, 0.2) 1px;
+
+    .mobile_title__heading {
+        color: $basic-font-color;
+        opacity: 0.4;
+    }
+
+    .icon--close-menu {
+        position: absolute;
+        font-size: 1.4rem;
+        top: 16px;
+        right: 5px;
+        color: rgba($secondary, 0.5);
+    }
+}
+
+@media only screen and (max-width: 639px) {
+    #main__menu {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 250px;
+        max-width: 90vw;
+        height: 100vh;
+        background: hsla(0, 0%, 13%, 0.97);
+        box-shadow: 5px 0 13px hsla(0, 0%, 11%, 0.836);
+        margin-left: -257px;
+        transition: margin-left 0.3s ease-in-out;
+        backdrop-filter: blur(10px);
+        // z-index: 10000000;
+
+        &.show__menu {
+            margin-left: 0px;
+        }
+    }
+
+    .menu__list {
+        >.menu__item {
+            padding: 10px 20px;
+            border-bottom: dashed hsla(0, 0%, 18%, 0.699) 1px;
+
+            .menu__link {
+                padding: 5px 0;
+
+                &--active {
+                    color: $primary;
+
+                    &::before {
+                        content: '';
+                        height: 100%;
+                        width: 5px;
+                        position: absolute;
+                        background: linear-gradient(to bottom,
+                                $secondary,
+                                darken($secondary, 15%));
+                        left: -10px;
+                        border-radius: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 640px) {
+    #main__menu {
+        position: relative;
+    }
+
+    .mobile-menu__header {
+        display: none;
+    }
+
+    .menu__list {
+        display: flex;
+    }
+
+    [class^='menu__link'] {
+        position: relative;
+        padding: 0 3px;
+
+        &::before,
+        &::after {
+            // display: none;
+            color: rgba($primary, 0.79);
+            font-size: 1.5rem;
+            // font-weight: bold;
+            padding: 0 1px;
+            display: inline-block;
+            opacity: 0;
+            // top: -5px;
+            font-family: 'Lexend Deca', sans-serif;
+            text-shadow: 2px 2px 2px black;
+            transition: all 0.3s ease;
+        }
+
+        &::before {
+            content: '{...';
+            transform: translateX(10px);
+        }
+
+        &::after {
+            content: '}';
+            transform: translateX(-5px);
+            // right: -5px;
+        }
+    }
+
+    .menu__item {
+        position: relative;
+
+        &:hover {
+            .menu__link {
+                &::after {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+
+                &::before {
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+        }
+
+        .menu__link {
+            &--active {
+
+                &::before,
+                &::after {
+                    opacity: 1;
+                    color: $secondary;
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+
+    .submenu__wrapper {
+        position: absolute;
+        // display: none;
+        // z-index: 200;
+
+        >.submenu__content {
+            @include black-box;
+
+            .subitems__title {
+                font-size: 1rem;
+                display: flex;
+                color: darken($basic-font-color, 35%);
+                border-bottom: solid 1px hsla(0, 0%, 23%, 0.795);
+                text-shadow: 1px 1px 2px black;
+                margin-bottom: 5px;
+
+                >i {
+                    margin-right: 3px;
+                }
+            }
+        }
+    }
+
+    .submenu__wrapper.show {
+        padding-top: 5px;
+        left: -110px;
+        -webkit-animation: slide-in-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation: slide-in-top 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        animation-delay: 200ms;
+        display: block;
+        // isolation: isolate;
+
+        >.submenu__content {
+            display: flex;
+            gap: 20px;
+            padding: 10px 20px;
+            position: relative;
+            // z-index: 1000;
+            position: relative;
+
+
+            >.subitems__wrapper {
+                min-width: 150px;
+                flex: 1;
+
+
+                >ul {
+                    padding: 0;
+
+                    &.submenu__item:last-child {
+                        border: none !important;
+                    }
+                }
+
+                >.subitems__title {
+                    color: $gray-40;
+                    font-size: 1rem;
+                    display: flex;
+                    align-items: center;
+
+                }
+
+                .submenu__item {
+                    padding: 7px 0;
+                    border-bottom: dashed 1px hsla(0, 0%, 27%, 0.795);
+                    text-align: left;
+
+                    &:last-of-type {
+                        border: none;
+                    }
+                }
+
+                [class^='submenu__link'] {
+                    color: $basic-font-color;
+                    font-size: 1.1rem;
+
+                    >i {
+                        margin-right: 4px;
+                        color: $gray-50;
+                    }
+
+                    &:hover:not(.submenu__link--active) {
+                        >i {
+                            color: $primary;
+                            transition: color 0.2s linear;
+                        }
+                    }
+                }
+
+                .submenu__link--active {
+                    // text-shadow: 2px 2px 10px $orange-red;
+                    // color: $gray-60;
+                    color: $orange-red;
+
+                    >i {
+                        color: $gray-40;
+                        // text-shadow: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// /* ----------------------------------------------
+//  * Generated by Animista on 2022-12-23 10:42:42
+//  * Licensed under FreeBSD License.
+//  * See http://animista.net/license for more info.
+//  * w: http://animista.net, t: @cssanimista
+//  * ---------------------------------------------- */
+
+// /**
+//  * ----------------------------------------
+//  * animation slide-in-top
+//  * ----------------------------------------
+//  */
+@-webkit-keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-7px);
+        transform: translateY(-7px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-top {
+    0% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// // .slide-in-top {
+
+// // }

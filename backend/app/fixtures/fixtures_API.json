@@ -1,0 +1,191 @@
+[
+    {
+        "model": "category.category",
+        "pk": 1,
+        "fields": {
+            "name": "Bazy danych",
+            "icon": "database-icon",
+            "slug": "bazy-danych",
+            "category_type": "P",
+            "description": "Co to sa bazy danych?",
+            "created_at": "2022-07-26T05:32:27.823Z",
+            "modified_at": "2022-07-26T05:32:27.823Z",
+            "is_enabled": true,
+            "parent": null
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 2,
+        "fields": {
+            "name": "SQL",
+            "icon": "sql-icon",
+            "slug": "sql",
+            "category_type": "P",
+            "description": "Co to jest SQL?",
+            "created_at": "2022-07-26T05:32:27.823Z",
+            "modified_at": "2022-07-26T05:32:27.823Z",
+            "is_enabled": true,
+            "parent": 1
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 3,
+        "fields": {
+            "name": "MongoDB",
+            "icon": "mongo-icon",
+            "slug": "mongodb",
+            "category_type": "P",
+            "description": "Co to jest Mongo?",
+            "created_at": "2022-07-26T05:32:27.823Z",
+            "modified_at": "2022-07-26T05:32:27.823Z",
+            "is_enabled": true,
+            "parent": null
+        }
+    },
+    {
+        "model": "category.category",
+        "pk": 4,
+        "fields": {
+            "name": "Django",
+            "icon": "django-icon",
+            "slug": "django",
+            "category_type": "P",
+            "description": "Co to jest django?",
+            "created_at": "2022-07-26T05:32:27.823Z",
+            "modified_at": "2022-07-26T05:32:27.823Z",
+            "is_enabled": true,
+            "parent": 1
+        }
+    },
+    {
+        "model": "blog.tag",
+        "pk": 1,
+        "fields": {
+            "name": "Tag 1",
+            "slug": "tag-1",
+            "icon": "tag icon 1",
+            "description": "tag 1 description",
+            "created_at": "2022-07-26T05:41:51.522Z",
+            "modified_at": "2022-07-26T05:41:51.522Z"
+        }
+    },
+    {
+        "model": "blog.tag",
+        "pk": 2,
+        "fields": {
+            "name": "Tag 2",
+            "slug": "tag-2",
+            "icon": "tag icon 2",
+            "description": "tag 2 description",
+            "created_at": "2022-07-26T05:41:51.522Z",
+            "modified_at": "2022-07-26T05:41:51.522Z"
+        }
+    },
+    {
+        "model": "blog.tag",
+        "pk": 3,
+        "fields": {
+            "name": "Tag 3",
+            "slug": "tag-3",
+            "icon": "tag icon 3",
+            "description": "tag 3 description",
+            "created_at": "2022-07-26T05:41:51.522Z",
+            "modified_at": "2022-07-26T05:41:51.522Z"
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 1,
+        "fields": {
+            "title": "Co to jest relacyjna baza danych?",
+            "slug": "co-to-jest-relacyjna-baza-danych",
+            "category": 2,
+            "content": "<h3>SQl</h3>",
+            "is_published": true,
+            "created_at": "2022-07-25T05:41:51.522Z",
+            "modified_at": "2022-07-25T05:41:51.522Z",
+            "tag": [
+                1,
+                2
+            ],
+            "demo_css": "some css 1",
+            "demo_js": "some js 1"
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 2,
+        "fields": {
+            "title": "Normalizacja bazy",
+            "slug": "normalizacja-bazy",
+            "category": 2,
+            "content": "<h3>SQl</h3>",
+            "is_published": true,
+            "created_at": "2022-07-26T05:41:51.522Z",
+            "modified_at": "2022-07-26T05:41:51.522Z",
+            "tag": [
+                1,
+                2
+            ],
+            "demo_css": "some css 1",
+            "demo_js": "some js 1"
+        }
+    },
+    {
+        "model": "blog.post",
+        "pk": 3,
+        "fields": {
+            "title": "Co to jest Mongo",
+            "slug": "co-to-jest-mongo",
+            "category": 3,
+            "content": "<h3>Mongo</h3>",
+            "is_published": true,
+            "created_at": "2022-07-26T05:41:51.522Z",
+            "modified_at": "2022-07-26T05:41:51.522Z",
+            "tag": [
+                1,
+                2
+            ],
+            "demo_css": "some css 1",
+            "demo_js": "some js 1"
+        }
+    },
+    {
+        "model": "terminology.term",
+        "pk": 1,
+        "fields": {
+            "definition": "What is 1",
+            "slug": "what-is-1",
+            "category": 1,
+            "description": "Term 1 is",
+            "created_at": "2022-07-24T03:49:10.526Z",
+            "modified_at": "2022-07-24T03:52:38.669Z"
+        }
+    },
+    {
+        "model": "terminology.term",
+        "pk": 2,
+        "fields": {
+            "definition": "What is 2",
+            "slug": "what-is-2",
+            "category": 2,
+            "description": "Term 2 is",
+            "created_at": "2022-07-26T05:35:05.026Z",
+            "modified_at": "2022-07-26T05:35:05.026Z"
+        }
+    },
+    {
+        "model": "terminology.term",
+        "pk": 3,
+        "fields": {
+            "definition": "What is 3",
+            "slug": "what-is-3",
+            "category": 3,
+            "description": "Term 3 is",
+            "created_at": "2022-07-26T05:35:05.026Z",
+            "modified_at": "2022-07-26T05:35:05.026Z"
+        }
+    }
+]

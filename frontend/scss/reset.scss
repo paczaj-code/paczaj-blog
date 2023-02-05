@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+ul,
+ol {
+    list-style: none;
+    padding: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+::selection {
+    background: hsla(204, 93%, 36%, 0.4);
+    box-shadow: 0 0 5px black;
+    // border-radius: 10px;
+    /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+    background: hsla(204, 93%, 36%, 0.4);
+    box-shadow: 0 0 5px black;
+    /* Gecko Browsers */
+}

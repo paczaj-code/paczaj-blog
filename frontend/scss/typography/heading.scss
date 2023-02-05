@@ -1,0 +1,53 @@
+@import '../variables.scss';
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.7rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1.2rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+
+[class*="heading"] {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    // gap: 10px;
+}
+
+.article-category__heading {
+    text-shadow: 3px 3px 6px hsla(0, 0%, 0%, 0.4),
+        2px 2px 1px hsla(0, 0%, 0%, 0.3);
+    font-weight: bold !important;
+    // margin-bottom: 2px;
+
+    >i {
+        color: hsl(221, 58%, 56%);
+        margin-right: 7px;
+    }
+
+    >span {
+
+        // margin-left: 20px;
+
+        // opacity: 0.5;
+        // font-size: 2.4rem;
+    }
+}

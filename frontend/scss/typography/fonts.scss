@@ -1,0 +1,287 @@
+@font-face {
+  font-family: "icomoon";
+  src: url("../../public/fonts/icomoon.eot?hn7yua");
+  src: url("../../public/fonts/icomoon.eot?hn7yua#iefix") format("embedded-opentype"),
+    url("../../public/fonts/icomoon.ttf?hn7yua") format("truetype"),
+    url("../../public/fonts/icomoon.woff?hn7yua") format("woff"),
+    url("../../public/fonts/icomoon.svg?hn7yua#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-stats:before {
+  content: "\e922";
+}
+
+.icon-stats1:before {
+  content: "\e923";
+}
+
+.icon-presentation:before {
+  content: "\e924";
+}
+
+.icon-chart:before {
+  content: "\e925";
+}
+
+.icon-chart1:before {
+  content: "\e926";
+}
+
+.icon-chart2:before {
+  content: "\e927";
+}
+
+.icon-chart3:before {
+  content: "\e928";
+}
+
+.icon-chart4:before {
+  content: "\e929";
+}
+
+.icon-chart5:before {
+  content: "\e92a";
+}
+
+.icon-data:before {
+  content: "\e914";
+}
+
+.icon-piechart:before {
+  content: "\e912";
+}
+
+.icon-bargraph:before {
+  content: "\e913";
+}
+
+.icon-linegraph:before {
+  content: "\e911";
+}
+
+.icon-eye-outline:before {
+  content: "\e92f";
+}
+
+.icon-eye1:before {
+  content: "\e930";
+}
+
+.icon-chart-bar-outline:before {
+  content: "\e92b";
+}
+
+.icon-chart-bar:before {
+  content: "\e92c";
+}
+
+.icon-th-menu-outline:before {
+  content: "\e92d";
+}
+
+.icon-th-menu:before {
+  content: "\e92e";
+}
+
+.icon-chart-area-outline:before {
+  content: "\e91a";
+}
+
+.icon-chart-bar-outline1:before {
+  content: "\e91b";
+}
+
+.icon-chart-line-outline:before {
+  content: "\e91c";
+}
+
+.icon-chart-pie-outline:before {
+  content: "\e91d";
+}
+
+.icon-chart-area:before {
+  content: "\e91e";
+}
+
+.icon-chart-line:before {
+  content: "\e91f";
+}
+
+.icon-chart-pie:before {
+  content: "\e920";
+}
+
+.icon-chart-bar1:before {
+  content: "\e921";
+}
+
+.icon-arrow-down-outline:before {
+  content: "\e916";
+}
+
+.icon-arrow-up-outline:before {
+  content: "\e917";
+}
+
+.icon-arrow-left-outline:before {
+  content: "\e918";
+}
+
+.icon-arrow-right-outline:before {
+  content: "\e919";
+}
+
+.icon-arrow-circle-right:before {
+  content: "\f0a9";
+}
+
+.icon-bars:before {
+  content: "\f0c9";
+}
+
+.icon-navicon:before {
+  content: "\f0c9";
+}
+
+.icon-reorder:before {
+  content: "\f0c9";
+}
+
+.icon-css3:before {
+  content: "\e90c";
+}
+
+.icon-css3-color:before {
+  content: "\e90e";
+  color: #1572b6;
+}
+
+.icon-pandas:before {
+  content: "\e90f";
+}
+
+.icon-pandas-color:before {
+  content: "\e910";
+  color: #150458;
+}
+
+.icon-numpy:before {
+  content: "\e900";
+}
+
+.icon-numpy-color:before {
+  content: "\e900";
+  color: hsl(221, 58%, 56%)
+}
+
+.icon-github:before {
+  content: "\e901";
+}
+
+.icon-git:before {
+  content: "\e902";
+}
+
+.icon-git-color:before {
+  content: "\e903";
+  color: #f05032;
+}
+
+.icon-microsoftsqlserver:before {
+  content: "\e904";
+}
+
+.icon-microsoftsqlserver-color:before {
+  content: "\e905";
+  color: #cc2927;
+}
+
+.icon-postgresql:before {
+  content: "\e906";
+}
+
+.icon-postgresql-color:before {
+  content: "\e907";
+  color: #4169e1;
+}
+
+.icon-sqlite:before {
+  content: "\e908";
+}
+
+.icon-sqlite-color:before {
+  content: "\e909";
+  color: #003b57;
+}
+
+.icon-mysql:before {
+  content: "\e90a";
+}
+
+.icon-mysql-color:before {
+  content: "\e90b";
+  color: #4479a1;
+}
+
+.icon-mongodb:before {
+  content: "\e915";
+}
+
+.icon-mongodb-color:before {
+  content: "\e915";
+  color: #47a248;
+}
+
+.icon-postgresql1:before {
+  content: "\e90d";
+  color: #336791;
+}
+
+.icon-database:before {
+  content: "\e964";
+}
+
+.icon-stats-bars:before {
+  content: "\e99c";
+}
+
+.icon-stats-bars2:before {
+  content: "\e99d";
+}
+
+.icon-eye:before {
+  content: "\e9ce";
+}
+
+.icon-eye-blocked:before {
+  content: "\e9d1";
+}
+
+.icon-circle-right:before {
+  content: "\ea42";
+}
+
+.icon-circle-left:before {
+  content: "\ea44";
+}

@@ -1,0 +1,67 @@
+{
+    "category": [
+        {
+            "id": 1,
+            "name": "Bazy danych",
+            "icon": "icon-data",
+            "slug": "bazy-danych",
+            "posts": 0,
+            "description": "<div>\r\n<p>Lorem ipsum dolor sit amet. Aut fuga magni <strong>Et sunt ut repellat nisi ea dolor quasi</strong> sed iure voluptatem ut reprehenderit nulla. Hic voluptas nulla ut explicabo voluptatemIn sunt aut Quis possimus est suscipit deleniti? Ea nesciunt voluptas <em>Rem galisum</em> sed voluptatem laboriosam qui incidunt quisquam. Non architecto facilis <strong>Aut Quis aut corrupti dolores</strong>. Eum quia quia <strong>Et illum ut dolorem assumenda id molestiae accusamus</strong> vel voluptas reiciendis. Ut omnis explicaboNon sunt non sint amet. </p>\r\n</div>",
+            "subcategories": [
+                {
+                    "id": 3,
+                    "name": "MongoDB",
+                    "icon": "icon-mongodb",
+                    "slug": "mongodb",
+                    "posts": 0,
+                    "subcount": 0
+                },
+                {
+                    "id": 2,
+                    "name": "SQL",
+                    "icon": "icon-microsoftsqlserver-color",
+                    "slug": "sql",
+                    "posts": 0,
+                    "description": "<h2>\r\n  REalcujne naa\r\n</h2>",
+                    "subcount": 0
+                }
+            ],
+            "subcount": 2
+        },
+        {
+            "id": 4,
+            "name": "DataScience",
+            "icon": "icon-linegraph",
+            "slug": "datascience",
+            "posts": 0,
+            "description": "<div>\r\n  \r\n<p>Lorem ipsum dolor sit amet. Nam architecto consequuntur est sint commodi eum tempora voluptates et sapiente provident ut quaerat galisum qui similique nihil eum atque debitis. Eos galisum sunt aut ipsum nulla et fugit consectetur. Aut omnis consequuntur id nemo rerum ut dolorem pariatur. Ab unde accusantium et voluptatem numquam et quia velit ex earum provident quo sequi alias ut mollitia molestiae. </p><p>Vel molestiae enim non facilis dolor ea voluptatem vero aut quidem galisum sit sequi odit. Est excepturi officia aut totam nihil eum quos voluptas et consequatur galisum. Ea eaque voluptatem ut cupiditate similique et sequi fugit nam fugiat maiores. Est sunt nihil ut fugiat excepturi a necessitatibus exercitationem sit dignissimos error et autem numquam. </p><p>Eum dolor odio id unde dignissimos qui facilis commodi et quia nulla sit doloribus velit. A commodi blanditiis ex porro accusantium rem dignissimos quaerat qui voluptatem galisum eos galisum recusandae eum labore autem et dolorem modi. Rem quae possimus ut possimus rerum qui autem quia id consequatur ullam aut obcaecati debitis. </p><ul><li>Aut voluptatem porro est quaerat iusto. </li><li>Aut voluptas molestiae et officia illo. </li><li>In molestias ratione sit dolores velit est sint omnis aut quia dolorem. </li><li>Aut quia ipsam qui nulla ullam. </li><li>Et libero nihil ut culpa quas. </li><li>Id dolorem illo non sint amet et modi iure. </li></ul></div>",
+            "subcategories": [
+                {
+                    "id": 7,
+                    "name": "Prezentacja danych",
+                    "icon": "icon-chart",
+                    "slug": "prezentacja-danych",
+                    "posts": 0,
+                    "subcount": 0
+                },
+                {
+                    "id": 6,
+                    "name": "Pandas",
+                    "icon": "icon-pandas",
+                    "slug": "pandas",
+                    "posts": 0,
+                    "subcount": 0
+                },
+                {
+                    "id": 5,
+                    "name": "NumPy",
+                    "icon": "icon-numpy",
+                    "slug": "numpy",
+                    "posts": 0,
+                    "subcount": 0
+                }
+            ],
+            "subcount": 3
+        }
+    ]
+}

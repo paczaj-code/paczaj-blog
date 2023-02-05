@@ -1,0 +1,44 @@
+$basic-font-color: hsl(0, 0%, 78%);
+$primary: #1e9ce6;
+$secondary: #f16b4e;
+$success: #31ac00;
+$danger: #eb0101;
+
+$background-color: hsla(242, 35%, 8%, 0.9);
+$header-bkg-color: hsla(240, 20%, 16%, 1);
+
+
+
+$red-salsa: hsla(359, 94%, 62%, 1);
+$orange-red: hsla(21, 89%, 56%, 1);
+$yellow-orange-color-wheel: hsla(33, 94%, 55%, 1);
+$mango-tango: hsla(20, 94%, 63%, 1);
+$maize-crayola: hsla(42, 93%, 64%, 1);
+$pistachio: hsla(94, 38%, 59%, 1);
+$jungle-green: hsla(162, 43%, 46%, 1);
+$steel-teal: hsla(178, 30%, 43%, 1);
+$queen-blue: hsla(208, 25%, 45%, 1);
+$celadon-blue: hsla(198, 61%, 39%, 1);
+
+$white: hsla(0, 0%, 100%, 1);
+$gray-90: hsla(0, 0%, 90%, 1);
+$gray-80: hsla(0, 0%, 80%, 1);
+$gray-70: hsla(0, 0%, 70%, 1);
+$gray-60: hsla(0, 0%, 60%, 1);
+$gray-50: hsla(0, 0%, 50%, 1);
+$gray-40: hsla(0, 0%, 40%, 1);
+$gray-30: hsla(0, 0%, 30%, 1);
+$gray-20: hsla(0, 0%, 20%, 1);
+$gray-15: hsla(0, 0%, 15%, 1);
+$gray-10: hsla(0, 0%, 10%, 1);
+$gray-05: hsla(0, 0%, 5%, 1);
+$black: hsl(0, 0%, 0%, 1);
+
+
+@mixin black-box {
+    border-radius: 8px;
+    background: $gray-15;
+    box-shadow: 0 0 60px rgba(0, 0, 0, 0.6) inset, 0 5px 1px rgba($gray-05, 0.6),
+        0 2px 2px rgba($gray-05, 0.6), 0 2px 8px 0px rgba($gray-05, 0.6);
+    border: solid $gray-15 1px;
+}
