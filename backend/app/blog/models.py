@@ -29,6 +29,7 @@ class Tag(models.Model):
         db_table = 'tag'
 
 
+# TODO Add file upload to mode
 class Post(models.Model):
     """Model for posts"""
     title = models.CharField(max_length=255)
@@ -54,9 +55,6 @@ class Post(models.Model):
         verbose_name_plural = 'Posts'
         db_table = 'post'
 
-
-# TODO poprawić zapisywanie jsona obrazków
-
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
         if self.image_id:
@@ -69,16 +67,15 @@ class Post(models.Model):
             image_data.update({'author': {'id': result.json()['user']['id'], 'username': result.json()['user']['username'], 'name': result.json()['user']['name'],
                                           'html': result.json()['user']['links']['html']
                                           }})
-            self.image = json.dumps(image_data)
+            self.image = image_data
         else:
             self.image = None
         super().save(*args, **kwargs)
 
     def image_view(self):
         if self.image_id:
-            urld = json.loads(self.image)
+            urld = self.image
             url2 = urld['image_urls']['small']
-            # return json.dumps(url2)
             return format_html(
                 f'<img src="{url2}"/>'
             )
