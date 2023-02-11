@@ -11,16 +11,24 @@ const customJestConfig = {
   moduleNameMapper: {
     // Handle module aliases (this will be automatically configured for you soon)
     '^@/components/(.*)$': '<rootDir>/components/$1',
-    '^@/utils/(.*)$': '<rootDir>/utils/$1',
+    // '^@/utils/(.*)$': '<rootDir>/utils/$1',
     '^@/pages/(.*)$': '<rootDir>/pages/$1',
   },
   testEnvironment: 'jest-environment-jsdom',
   collectCoverageFrom: [
-    '**/*.{js,jsx,ts,tsx}',
+    '**/*.{ts,jsx,tsx}',
     '!**/coverage/**',
     '!**/jest.config.js',
+    '!**/next.config.js',
     '!**/node_modules/**',
     '!**/vendor/**',
+    '!**/__test__/**',
+    '!**/hooks/**',
+    '!**/utils/**',
+  ],
+
+  modulePathIgnorePatterns: [
+    "/_test__/menuItemsForTests.ts",
   ],
   rootDir: "./",
   modulePaths: [
