@@ -14,7 +14,8 @@ class BasicCategorySerializer(serializers.ModelSerializer):
 
     def get_posts(self, obj):
         """Add field post as count of related articles"""
-        posts = Post.objects.filter(category_id__in=[obj]).count()
+        posts = Post.objects.filter(
+            category_id__in=[obj], is_published=True).count()
         return posts
 
 

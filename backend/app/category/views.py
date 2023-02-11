@@ -17,36 +17,36 @@ class CategoryListAPIView(APIView):
                 sub_query
                 AS
                 (
-                    SELECT c.id,
-                        c.name,
-                        c.parent_id,
-                        COUNT(p.id) as articles_count,
-                        c.slug,
-                        c.icon,
-                        c.description
-                    FROM category c
-                    LEFT JOIN post p on p.category_id=c.id
-                    WHERE parent_id IS NOT NULL and is_enabled = TRUE AND category_type='P' AND p.is_published=TRUE
-                    GROUP BY c.id,
-                        c.name,
-                        c.parent_id,
-                        c.slug
-                    ORDER BY c.id
+                    SELECT category.id,
+                        category.name,
+                        category.parent_id,
+                        count(post.id) AS articles_count,
+                        category.slug,
+                        category.icon,
+                        category.description
+                    FROM category
+                    LEFT JOIN post  ON post.category_id = category.id
+                    WHERE parent_id IS NOT NULL AND is_enabled = TRUE AND category_type = 'P' AND post.is_published = TRUE
+                    GROUP BY category.id,
+                        category.name,
+                        category.parent_id,
+                        category.slug
+                    ORDER BY category.id
                 )
             SELECT
-            mc.id,
-                mc.name,
-                mc.description,
-                mc.slug,
-                mc.icon,
-                COUNT(sc.parent_id) as subcategories_count,
-                SUM(sc.articles_count ) as articles_count,
-                json_agg(sc) AS sub_categories
-            FROM category mc
-            INNER  JOIN sub_query sc on sc.parent_id=mc.id
-            WHERE mc.is_enabled=TRUE
-            GROUP BY mc.id
-            ORDER BY mc.id
+            category.id,
+                category.name,
+                category.description,
+                category.slug,
+                category.icon,
+                count(sub_query.parent_id) AS subcategories_count,
+                sum(sub_query.articles_count ) AS articles_count,
+                json_agg(sub_query) AS sub_categories
+            FROM category
+            INNER  JOIN sub_query ON sub_query.parent_id = category.id
+            WHERE category.is_enabled = TRUE
+            GROUP BY category.id
+            ORDER BY category.id
 
         ''')
 
@@ -63,6 +63,7 @@ class CategoryDetailAPIViewBySlug(APIView):
     def get_object_by_slug(self, slug):
         try:
             return Category.objects.get(slug=slug, is_enabled=True, category_type='P',)
+            # )
         except Category.DoesNotExist:
             raise Http404
 
