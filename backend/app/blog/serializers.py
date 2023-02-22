@@ -47,6 +47,8 @@ class PostDetailSerializer(BasicPostSerializer):
     category_icon = serializers.CharField()
     category_slug = serializers.CharField()
     glossary_items = serializers.ListSerializer(child=serializers.CharField())
+    chapters = serializers.ListSerializer(child=serializers.CharField())
+    related_post = serializers.ListSerializer(child=serializers.CharField())
     next_article = serializers.JSONField()
     prev_article = serializers.JSONField()
 
@@ -55,7 +57,7 @@ class PostDetailSerializer(BasicPostSerializer):
         fields = BasicPostSerializer.Meta.fields + \
             ['image_url', 'image_author_data', 'created_at',
                 'modified_at', 'article_tags', 'content', 'category_name', 'category_icon', 'category_slug',
-                'glossary_items', 'next_article', 'prev_article']
+                'glossary_items', 'next_article', 'prev_article', 'chapters', 'related_post']
 
     def to_representation(self, instance):
         """Clean of empty values and add count of subcategories"""

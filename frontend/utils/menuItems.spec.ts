@@ -1,5 +1,7 @@
 import { expect } from '@jest/globals';
-import { menuItems } from './menuItems';
+// import { menuItems } from './menuItems';
+
+import { menuItems } from './menuItemsForTests';
 
 describe('Tests for menu items', () => {
   it('should be 4 elements', () => {

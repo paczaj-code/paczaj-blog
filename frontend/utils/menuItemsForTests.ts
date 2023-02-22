@@ -1,13 +1,3 @@
-interface MenuItemTypes {
-  name: string;
-  target: string;
-  icon?: string;
-}
-
-export interface MenuTypes extends MenuItemTypes {
-  subMenu?: { name: string; icon?: string; subMenuItems: MenuItemTypes[] };
-}
-
 export const menuItems = [
   {
     name: 'Blog',
@@ -23,7 +13,7 @@ export const menuItems = [
             target: '/sql',
             icon: 'icon-microsoftsqlserver',
           },
-          // { name: 'MongoDB', target: '/mongodb', icon: 'icon-mongodb' },
+          { name: 'MongoDB', target: '/mongodb', icon: 'icon-mongodb' },
         ],
       },
       {
@@ -31,7 +21,7 @@ export const menuItems = [
         icon: 'icon-linegraph',
         subMenuItems: [
           { name: 'Pandas', target: '/pandas', icon: 'icon-pandas' },
-          // { name: 'NumPy', target: '/numpy', icon: 'icon-numpy' },
+          { name: 'NumPy', target: '/numpy', icon: 'icon-numpy' },
         ],
       },
     ],
@@ -59,6 +49,6 @@ export const menuItems = [
       },
     ],
   },
-  // { name: 'Glosariusz', target: '/glossary', icon: undefined },
+  { name: 'Glosariusz', target: '/glossary', icon: undefined },
   { name: 'O mnie', target: '/about', icon: undefined },
 ];

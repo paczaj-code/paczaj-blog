@@ -1,15 +1,12 @@
 import React from 'react';
+import parse from 'html-react-parser';
 import { useRouter } from 'next/router';
-
 import MainLayout from 'layouts/MainLayout';
 import Section from '@/components/Section/Section';
 import ItemCard from '@/components/UI/Card/ItemCard';
 import Icon from '@/components/Icon/Icon';
 import Button from '@/components/UI/Button/Button';
-import db from '../../utils/db.json';
-import Image from 'next/image';
 import Heading from '@/components/UI/Heading/Heading';
-import { useFetch } from 'hooks/useFetch';
 
 interface CategoryTypes {
   id: number;
@@ -55,7 +52,7 @@ const Articles: React.FC<CategoriesTypes> = ({ categories }) => {
               <div className={`section__image--${category.slug}`}></div>
               <div className="section__description">
                 <Heading headingLevel="h3" heading_label={category.name} />
-                <p>{category.description}</p>
+                <p>{parse(category.description!)}</p>
               </div>
             </div>
 

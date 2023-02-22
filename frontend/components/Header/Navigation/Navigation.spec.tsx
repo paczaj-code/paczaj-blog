@@ -1,7 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import Navigation from './Navigation';
-import { menuItems } from '../../../utils/menuItems';
+// import { menuItems } from '../../../utils/menuItems';
+import { menuItems } from 'utils/menuItemsForTests';
 
 const click = jest.fn();
 

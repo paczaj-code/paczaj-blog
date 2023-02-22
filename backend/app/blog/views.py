@@ -65,7 +65,7 @@ class PostDetailAPIView(APIView):
     def get_object_by_slug(self, slug):
         try:
             post = Post.objects.raw(
-                f"""
+                """
                     SELECT post.id,
                         post.title,
                         post.content,
@@ -80,6 +80,14 @@ class PostDetailAPIView(APIView):
                         image::JSON->'image_urls'-> 'small' AS image_url,
                         image::JSON-> 'author' AS image_author_data,
                         array(SELECT array_to_string(regexp_matches(post.content, '<span.*data-slug.*</span>', 'gm'),'')) AS glossary_items,
+                        array(SELECT array_to_string(regexp_matches(content,'<h3.*class="chapter".*\n.*\n<\/h3>', 'gm'),'')) as chapters,
+                        (SELECT json_agg(e)
+                        FROM (
+                        SELECT p.title, p.slug, p.id FROM post_related_posts
+                        INNER JOIN post AS p ON p.id = post_related_posts.to_post_id
+                        WHERE post_related_posts.from_post_id = post.id
+                            ORDER BY post.id
+                            ) e) AS related_post,
                           (SELECT row_to_json(t)
                                 FROM (
                                 (SELECT p.id,
@@ -106,14 +114,14 @@ class PostDetailAPIView(APIView):
                     JOIN category ON category.id = post.category_id
                     LEFT JOIN post_tag ON post_tag.post_id = post.id
                     INNER JOIN tag ON tag.id = post_tag.tag_id
-                    WHERE post.slug = '{slug}' AND post.is_published=TRUE
+                    WHERE post.slug = %s AND post.is_published=TRUE
                     GROUP BY post.id,
                             category.name,
                             category.icon,
                             category.slug;
-            """
+            """, [slug]
             )
-
+# TODO zmienić f stringi w zapytaniach
             if post == None:
                 raise Http404()
 

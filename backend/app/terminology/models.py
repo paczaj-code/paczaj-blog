@@ -26,6 +26,3 @@ class Term(models.Model):
 
     class Meta:
         db_table = 'terminology'
-
-
-admin.site.register(Term)

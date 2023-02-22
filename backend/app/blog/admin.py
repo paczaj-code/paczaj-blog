@@ -8,15 +8,6 @@ from category.models import Category
 # Register your models here.
 
 
-# class PrettyJSONEncoder(json.JSONEncoder):
-#     def __init__(self, *args, indent, sort_keys, **kwargs):
-#         super().__init__(*args, indent=2, sort_keys=True, **kwargs)
-
-
-# class PostForm(forms.ModelForm):
-#     json_field = forms.JSONField(encoder=PrettyJSONEncoder)
-
-
 class PostAdmin(admin.ModelAdmin):
     # form = PostForm
     list_display = ('upper_case_title', 'category', 'is_published',)

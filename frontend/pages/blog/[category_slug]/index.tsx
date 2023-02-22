@@ -15,10 +15,6 @@ const ArticlesByCategory = ({ articles }: any) => {
       : setActiveTags(activeTags.filter((i) => i !== tagName));
   };
 
-  // useEffect(() => {
-  //   articles && setPosts(articles.posts);
-  // }, []);
-
   useEffect(() => {
     const handleComplete = () => {
       setPosts(articles.posts);
@@ -37,76 +33,13 @@ const ArticlesByCategory = ({ articles }: any) => {
     if (activeTags.length) {
       setPosts(
         articles.posts.filter((element: any) =>
-          element.tag.some((f: any) => activeTags.includes(f))
+          element.article_tags.some((f: any) => activeTags.includes(f))
         )
       );
     } else {
       setPosts(articles.posts);
     }
   }, [activeTags]);
-
-  var ob_array = [
-    {
-      a: 1,
-      col_2: 'abc',
-    },
-    {
-      a: 2,
-      col_2: 'xyz',
-    },
-    {
-      a: 3,
-      col_2: 'jkl',
-    },
-  ];
-
-  var my_array = [1, 2];
-
-  // console.log(ob_array.filter((ob) => my_array.includes(ob.a)));
-
-  // const avengers = articles.posts.filter((item: any) =>
-  //   item.tag.some(activeTags.includes(item.tag.name))
-  // );
-  // console.log(activeTags.includes('DHL'));
-  // console.log(activeTags.includes('DHL'));
-
-  // const intersection = articles.posts.filter((element) =>
-  //   element.tag.some((f) => activeTags.includes(f))
-  // );
-
-  // console.log(activeTags);
-
-  // console.log(intersection);
-  // const arr = ['banana', 'monkey banana', 'apple', 'kiwi', 'orange'];
-
-  // const checker = (value) =>
-  //   !['banana', 'apple'].some((element) => value.includes(element));
-
-  // console.log(arr.filter(checker));
-  // console.log(avengers);
-
-  // const books = [
-  //   {
-  //     id: '1',
-  //     title: 'Book title',
-  //     areas: ['horror', 'mystery'],
-  //   },
-  //   {
-  //     id: '2',
-  //     title: 'Book title 2',
-  //     areas: ['friendship', 'love', 'history'],
-  //   },
-  //   {
-  //     id: '3',
-  //     title: 'Book title 3',
-  //     areas: ['friendship', 'scifi'],
-  //   },
-  // ];
-
-  // const filterValue = 'friendship';
-  // const filteredBooks = books.filter((val) => val.areas.includes(filterValue));
-  // console.log(filteredBooks);
-  //  const aaa = articles.posts.filter((val)=>val.tag.includes())
 
   return (
     <>
@@ -123,8 +56,8 @@ const ArticlesByCategory = ({ articles }: any) => {
             <ArticleCard
               articleTitle={article.title}
               key={article.id}
-              articleImage={article.image && article.image.image_urls.small}
-              articleTags={article.tag}
+              articleImage={article.image_url && article.image_url}
+              articleTags={article.article_tags}
               onClick={() => router.push(`${router.asPath}/${article.slug}`)}
               active_tags={activeTags}
             />
@@ -136,14 +69,17 @@ const ArticlesByCategory = ({ articles }: any) => {
             heading_label="Filtruj"
             heading_prefix="articles-tags"
           />
-          {articles.tags.map((tag: any) => (
-            <Tag
-              name={tag}
-              slug={tag}
-              isActive={activeTags.includes(tag)}
-              onClick={() => handleTagsToggle(tag)}
-            />
-          ))}
+          {articles.tags.map(
+            (tag: any, index: React.Key | null | undefined) => (
+              <Tag
+                key={index}
+                name={tag}
+                slug={tag}
+                isActive={activeTags.includes(tag)}
+                onClick={() => handleTagsToggle(tag)}
+              />
+            )
+          )}
         </div>
       </div>
     </>

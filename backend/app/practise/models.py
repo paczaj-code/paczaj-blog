@@ -2,7 +2,6 @@ from django.db import models
 from django.contrib import admin
 from category.models import Category
 from blog.models import Post
-# from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from django.db.models import Max
 
@@ -15,7 +14,7 @@ class Practice(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
     is_published = models.BooleanField(default=True)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -43,6 +42,7 @@ class Exercise(models.Model):
     difficulty = models.CharField(
         choices=CHOICES, default=MEDIUM, max_length=1)
     exercise = models.TextField()
+    tip = models.TextField(blank=True)
     solution = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
@@ -70,4 +70,3 @@ class Exercise(models.Model):
 
 
 admin.site.register(Exercise)
-admin.site.register(Practice)
