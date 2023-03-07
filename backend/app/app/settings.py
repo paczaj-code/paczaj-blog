@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-)5-%_v*+e0v^sybxsr#)j2q^z1wl@^v)9o^wz(es^v#y^djb8*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "blog",
     "terminology",
     "practise",
+    "files"
 ]
 
 MIDDLEWARE = [
@@ -142,6 +143,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, '/static')]
+# print(STATIC_URL)
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'app/static'),]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
@@ -160,8 +165,6 @@ JAZZMIN_UI_TWEAKS = {
 
 JAZZMIN_SETTINGS = {
     "site_title": "Paczaj blog admin",
-
-    # Title on the login screen (19 chars max) (defaults to current_admin_site.site_header if absent or None)
     "site_header": "Library",
     "welcome_sign": "Welcome to the library",
     "icons": {
@@ -177,3 +180,6 @@ JAZZMIN_SETTINGS = {
 }
 
 TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,  'media')
