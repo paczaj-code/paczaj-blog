@@ -1,78 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
+// import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
 
-// const articles = [
-//   {
-//     id: 4,
-//     title: 'Pandas - biblioteka dla',
-//     slug: 'pandas-biblioteka-dla',
-//     category_slug: 'pandas',
-//   },
-//   {
-//     id: 1,
-//     title: 'Co to są relacyjne bazy danych?',
-//     slug: 'co-to-sa-relacyjne-bazy-danych',
-//     category_slug: 'sql',
-//   },
-//   {
-//     id: 6,
-//     title: 'Dipasss',
-//     slug: 'dipasss',
-//     category_slug: 'sql',
-//   },
-//   {
-//     id: 2,
-//     title: 'Jak pracować z bazą',
-//     slug: 'jak-pracowac-z-baza',
-//     category_slug: 'sql',
-//   },
-//   {
-//     id: 5,
-//     title: 'Instalacja bazy danych do ćwiczeń.',
-//     slug: 'instalacja-bazy-danych-do-cwiczen',
-//     category_slug: 'sql',
-//   },
-// ];
+import * as Prism from 'prismjs';
+import 'prismjs/components/prism-sql.js';
+import 'prismjs/components/prism-python.js';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/plugins/toolbar/prism-toolbar';
+import 'prismjs/plugins/toolbar/prism-toolbar.css';
+
+import 'prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard';
+import 'prismjs/plugins/line-numbers/prism-line-numbers.css';
 
 const ArticlesBySlug = ({ article }: any) => {
-  // const router = useRouter();
-  // const paths = articles.map((article: any) => {
-  //   return {
-  //     params: {
-  //       category_slug: article.category_slug,
-  //       article_slug: article.slug,
-  //     },
-  //   };
-  // });
+  const [hasMounted, setHasMounted] = useState(false);
 
-  // useEffect(() => {
-  //   setPosts(article);
-  // }, []);
+  useEffect(() => setHasMounted(true), []);
 
-  const [posts, setPosts] = useState<any>();
-  const router = useRouter();
-  // useEffect(() => {
-  //   const handleComplete = () => {
-  //     setPosts(article);
-  //     // setActiveTags([]);
-  //   };
-  //   router.events.on('routeChangeComplete', handleComplete);
-  //   router.events.on('routeChangeError', handleComplete);
+  useEffect(() => {
+    const highlight = async () => {
+      Prism.highlightAll();
+    };
 
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleComplete);
-  //     router.events.off('routeChangeError', handleComplete);
-  //   };
-  // }, [router]);
-  // console.log(posts);
+    highlight();
+  }, [hasMounted]);
 
   return (
     <div>
       {article && article.title}
-      <article>{article && parse(article.content)}</article>
-
-      {/* <article> {article.content && parse(article.content)}</article> */}
+      <article>{hasMounted && parse(article.content)}</article>
     </div>
   );
 };
@@ -119,7 +75,7 @@ export async function getStaticPaths() {
   // console.log(paths);
   return {
     paths,
-    fallback: true,
+    fallback: 'blocking',
   };
 }
 
