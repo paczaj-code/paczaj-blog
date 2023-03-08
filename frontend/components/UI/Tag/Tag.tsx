@@ -7,8 +7,7 @@ interface TagTypes {
   onClick?: React.MouseEventHandler;
   tag_prefix?: string;
   tag_modifier?: string;
-  isActive: boolean;
-  extra_class?: string;
+  isActive?: boolean;
 }
 
 const Tag: React.FC<TagTypes> = ({
@@ -18,17 +17,14 @@ const Tag: React.FC<TagTypes> = ({
   tag_prefix,
   tag_modifier,
   isActive = false,
-  extra_class,
 }) => {
   tag_modifier = isActive ? 'active' : '';
   return (
     <span
-      className={[
-        classNameModifiers(tag_prefix, tag_modifier, 'tag'),
-        extra_class,
-      ].join(' ')}
+      className={classNameModifiers(tag_prefix, tag_modifier, 'tag')}
       onClick={onClick}
       data-tagname={slug}
+      data-testid="tag"
     >
       {name}
     </span>
