@@ -8,7 +8,6 @@
     background: linear-gradient($header-bkg-color, darken($header-bkg-color, 6%));
     box-shadow: 0 8px 17px -4px hsla(0, 0%, 0%, 0.719);
     transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    z-index: 3000000;
 
     &--hide {
         top: -100px;
@@ -24,8 +23,9 @@
     margin: 0 auto;
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
+
 }
 
 .menu__toggler {
@@ -34,9 +34,11 @@
     outline: none;
     color: $basic-font-color;
     font-size: 1.3rem;
-    position: fixed;
-    left: 20px;
+    float: left;
+    position: absolute;
+    // left: 20px;
 }
+
 
 @media only screen and (min-width: 600px) {
     .menu__toggler {
@@ -44,6 +46,15 @@
     }
 
     .header__content {
-        justify-content: space-evenly;
+        justify-content: flex-end;
+        margin-right: 6vw;
     }
+}
+
+@media only screen and (min-width: 1025px) {
+    .header__content {
+        justify-content: center;
+        margin-right: 0;
+    }
+
 }
