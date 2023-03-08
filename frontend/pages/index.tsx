@@ -1,10 +1,11 @@
+import Layout from 'layouts/Layout';
 import Head from 'next/head';
 
 export default function Home() {
   return (
-    <>
+    <Layout layout_modifier="full">
       <Head>
-        <title>Create Next App i test</title>
+        <title>Paczaj.WTF</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>Jak to zrobić?</h1>
@@ -125,6 +126,6 @@ export default function Home() {
       </p>
       <h5>Jak to zrobić?</h5>
       <h6>Jak to zrobić?</h6>
-    </>
+    </Layout>
   );
 }
