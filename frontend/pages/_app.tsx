@@ -2,7 +2,8 @@ import '@/scss/global.scss';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Header from '@/components/Header/Header';
-
+import 'prismjs/themes/prism-tomorrow.css';
+import Layout from 'layouts/Layout';
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -11,9 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <div className="app">
         <Header />
-        <main className="main__layout">
-          <Component {...pageProps} />
-        </main>
+        <Component {...pageProps} />
       </div>
     </>
   );
