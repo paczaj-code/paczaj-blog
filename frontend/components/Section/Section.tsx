@@ -6,7 +6,6 @@ interface SectionTypes {
   children: React.ReactNode;
   section_prefix?: string;
   section_modifier?: string;
-  section_extra_classes?: string[];
   section_heading_label?: string;
   section_heading_level?: string;
   section_heading_icon?: string;
@@ -20,15 +19,15 @@ const Section: React.FC<SectionTypes> = ({
   section_heading_label,
   section_heading_level = 'h2',
   section_heading_icon,
-  section_extra_classes,
   seection_style,
 }) => {
   return (
     <section
-      className={[
-        classNameModifiers(section_prefix, section_modifier, 'section'),
-        section_extra_classes?.join(' '),
-      ].join(' ')}
+      className={classNameModifiers(
+        section_prefix,
+        section_modifier,
+        'section'
+      )}
       style={seection_style}
     >
       {section_heading_label && (
