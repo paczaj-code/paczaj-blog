@@ -1,0 +1,98 @@
+.category__section {
+    .section__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .category__description {
+            position: relative;
+            padding: 0.8rem 1.5rem;
+            @include black-box;
+            max-width: 940px;
+
+            &::before {
+                position: absolute;
+                content: '';
+                inset: 0;
+                background-color: hsla(30, 0%, 14%, 0.299);
+                z-index: -1;
+            }
+        }
+
+        .category__cards {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            margin-top: 2rem;
+
+            .category__item-card {
+                @include black-box;
+                background-color: hsla(0, 0%, 30%, 0.342);
+                position: relative;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                cursor: pointer;
+                min-width: 180px;
+                padding: 1rem 2rem 0.8rem 2rem;
+
+                border-radius: 10px;
+                transition: all 0.25s linear;
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: -3px;
+                    left: 0;
+                    height: 5px;
+                    filter: blur(2px);
+                    background-color: $mango-tango;
+                    width: 0;
+                    left: 0;
+                    opacity: 0.72;
+                    box-shadow: 0 3px 4px black, 0 4px 22px $mango-tango;
+                    transition: width 0.3s linear;
+                }
+
+                &:hover {
+                    &::after {
+                        width: 100%;
+                    }
+                }
+
+                >.item-card__icon {
+                    font-size: 2rem;
+                    text-shadow: 1px 1px 2px hsla(0, 0%, 15%, 0.644);
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 470px) {
+    .category__section {
+        .section__content {
+            .category__cards {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1025px) {
+    .category__section {
+        .section__content {
+            flex-direction: row;
+            gap: 2vw;
+            justify-content: space-between;
+
+            .category__cards {
+                flex-direction: column;
+                align-content: center;
+                align-items: stretch;
+            }
+        }
+    }
+}
